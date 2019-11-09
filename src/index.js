@@ -9,7 +9,7 @@ class Post extends Component {
     return React.createElement(
       "div",
       {
-        className: "post" //#C
+        className: "post"
       },
       React.createElement(
         "h2",
@@ -17,13 +17,13 @@ class Post extends Component {
           className: "postAuthor",
           id: this.props.id
         },
-        this.props.user, //#D
+        this.props.user,
         React.createElement(
           "span",
           {
-            className: "postBody" //#E
+            className: "postBody"
           },
-          this.props.content //#F
+          this.props.content
         )
       )
     );
@@ -31,15 +31,15 @@ class Post extends Component {
 }
 
 Post.propTypes = {
-  user: PropTypes.string.isRequired, //#G
-  content: PropTypes.string.isRequired, //#G
-  id: PropTypes.number.isRequired //#G
+  user: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 const App = React.createElement(Post, {
-  id: 1, //#H
-  content: " said: This is a post!", //#H
-  user: "mark" //#H
+  id: 1,
+  content: " injecting this from props into component",
+  user: "user-id"
 });
 
 render(App, node);
