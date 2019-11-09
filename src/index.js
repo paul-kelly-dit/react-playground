@@ -3,6 +3,9 @@ import { render } from "react-dom";
 const node = document.getElementById("root");
 
 // See we are doing lots of nesting - react is composable - we do this via children.
+
+// here we create stateless react elements
+
 const root = React.createElement(
   "div",
   {},
@@ -14,7 +17,7 @@ const root = React.createElement(
       "a",
       { href: "mailto:paul@tu.ie" },
       React.createElement("h6", {}, "Playing with React"),
-      React.createElement("em", {}, "...")
+      React.createElement("em", {}, "here we create stateless react elements")
     )
   )
 );
