@@ -1,11 +1,10 @@
 {
-  "name": "react-in-action-23",
+  "name": "react-in-action-24",
   "description": null,
-  "version": "0.0.0",
+  "version": "0.0.37",
   "dependencies": {
-    "react": "16.0.0",
     "react-dom": "16.0.0",
-    "start": "^5.1.0"
+    "react": "16.0.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.0"

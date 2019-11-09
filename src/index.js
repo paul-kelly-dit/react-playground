@@ -1,26 +1,45 @@
-import React from "react";
+import React, { Component } from "react";
 import { render } from "react-dom";
+import PropTypes from "prop-types";
+
 const node = document.getElementById("root");
 
-// See we are doing lots of nesting - react is composable - we do this via children.
+class Post extends Component {
+  render() {
+    return React.createElement(
+      "div",
+      {
+        className: "post" //#C
+      },
+      React.createElement(
+        "h2",
+        {
+          className: "postAuthor",
+          id: this.props.id
+        },
+        this.props.user, //#D
+        React.createElement(
+          "span",
+          {
+            className: "postBody" //#E
+          },
+          this.props.content //#F
+        )
+      )
+    );
+  }
+}
 
-// here we create stateless react elements
+Post.propTypes = {
+  user: PropTypes.string.isRequired, //#G
+  content: PropTypes.string.isRequired, //#G
+  id: PropTypes.number.isRequired //#G
+};
 
-const root = React.createElement(
-  "div",
-  {},
-  React.createElement(
-    "h1",
-    {},
-    "Rich Web",
-    React.createElement(
-      "a",
-      { href: "mailto:paul@tu.ie" },
-      React.createElement("h6", {}, "Playing with React"),
-      React.createElement("em", {}, "here we create stateless react elements")
-    )
-  )
-);
-render(root, node);
+const App = React.createElement(Post, {
+  id: 1, //#H
+  content: " said: This is a post!", //#H
+  user: "mark" //#H
+});
 
-// what does this look  like in the dom?
+render(App, node);
