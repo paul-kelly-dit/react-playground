@@ -1,7 +1,7 @@
 {
-  "name": "react-in-action-24",
+  "name": "react-in-action-26",
   "description": null,
-  "version": "0.0.37",
+  "version": "0.0.10",
   "dependencies": {
     "react-dom": "16.0.0",
     "react": "16.0.0"
